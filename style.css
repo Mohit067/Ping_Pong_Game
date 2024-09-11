@@ -1,0 +1,119 @@
+:root {
+    --arena-width: 800px;
+    --arena-height: 600px;
+    --bar-width: 8px;
+    --bar-height: 20%;
+    --ball-size: 20px;
+    --primary-color: #333;
+    --accent-color: orangered;
+    --bg-color: antiquewhite;
+    --text-color: #fff;
+    --border-color: #666;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    text-align: center;
+}
+
+#round-container {
+    display: flex;
+    gap: 1rem;
+    background: linear-gradient(135deg, #f76b1c, #f7a849);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+}
+
+#round {
+    border-radius: 5px;
+    background-color: var(--bg-color);
+    padding: 0.5rem;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    outline: none;
+    transition: transform 0.2s ease-in-out;
+}
+
+#round:hover {
+    transform: scale(1.05);
+}
+
+#score-board {
+    display: flex;
+    justify-content: space-between;
+    width: var(--arena-width);
+    padding: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+#game-arena {
+    width: calc(var(--arena-width) + 10px);
+    height: calc(var(--arena-height) + 10px);
+    background: var(--primary-color);
+    position: relative;
+    border: 5px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.bar {
+    width: var(--bar-width);
+    height: var(--bar-height);
+    background: linear-gradient(135deg, #888, #555);
+    border-radius: 5px;
+    position: absolute;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: top 0.1s linear;
+}
+
+#start-btn {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    padding: 15px 30px;
+    font-size: 18px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+#start-btn:hover {
+    background-color: darkorange;
+    transform: scale(1.05);
+}
+
+.ball {
+    width: var(--ball-size);
+    height: var(--ball-size);
+    background: radial-gradient(circle, #fff, #ddd);
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: top 0.1s linear, left 0.1s linear;
+}
